@@ -160,8 +160,8 @@ class MotorDriver(Node):
         angular_vel = msg.angular.z
 
         # Calculate wheel velocities in m/s for differential drive kinematics.
-        left_wheel_speed = linear_vel - (angular_vel * self.wheel_separation) / 2
-        right_wheel_speed = linear_vel + (angular_vel * self.wheel_separation) / 2
+        left_wheel_speed = linear_vel + (angular_vel * self.wheel_separation) / 2
+        right_wheel_speed = linear_vel - (angular_vel * self.wheel_separation) / 2
 
         # Avoid divide by zero in wheel radius
         if self.wheel_radius == 0:
